@@ -34,6 +34,17 @@ dependencies {
     testImplementation 'io.qameta.allure:allure-selenide:2.17.3'
 }
 
+tasks.withType(Test) {
+    useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
 task jenkins_task(type: Test) {
     useJUnitPlatform {
         includeTags("demoqa")
