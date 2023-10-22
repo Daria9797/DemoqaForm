@@ -35,7 +35,5 @@ dependencies {
 }
 
 task jenkins_task(type: Test) {
-    useJUnitPlatform {
-      
-    }
+    useJUnitPlatform ()
 }
